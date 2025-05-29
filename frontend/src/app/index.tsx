@@ -9,6 +9,7 @@ import {
 import { useQuery } from "@apollo/client";
 import { GET_NOODLES } from "./queries";
 import { NoodleItem } from "./components/NoodleItem";
+import { Stack } from "expo-router";
 
 export default function NoodleListScreen() {
   const { loading, error, data } = useQuery<{
@@ -20,10 +21,14 @@ export default function NoodleListScreen() {
 
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{ headerTitle: "Noodles" }} />
       <FlatList
         data={data?.instantNoodles}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <NoodleItem {...item} />}
+        numColumns={2}
+        showsVerticalScrollIndicator={false}
+        directionalLockEnabled
       />
     </View>
   );

@@ -13,5 +13,8 @@ export default config({
       await seedNoodleData(context as unknown as Context);
     },
   },
+  server: {
+    cors: { credentials: true, origin: '*' },
+  },
   lists,
 });

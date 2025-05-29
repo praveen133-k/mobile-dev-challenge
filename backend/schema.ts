@@ -52,6 +52,10 @@ export const lists = {
         defaultValue: 5,
         ui: { description: 'Your personal rating (1–10)' },
       }),
+      imageURL: text({
+        validation: { isRequired: false },
+        ui: { description: 'URL to the noodle image' },
+      }),
       category: relationship({
         ref: 'Category.noodles',
         many: false,

@@ -8,4 +8,5 @@ export type Noodle = {
   category?: {
     name: string;
   };
+  imageURL: string;
 };
