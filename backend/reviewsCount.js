@@ -1,0 +1,19 @@
+// ...existing imports...
+import { integer } from '@keystone-6/core/fields';
+
+// ...existing code...
+export const InstantNoodle = list({
+  fields: {
+    // ...existing fields...
+    reviewsCount: integer({
+      defaultValue: 0,
+      validation: { isRequired: true },
+      ui: {
+        description: 'Number of reviews for this noodle',
+      },
+    }),
+    // ...existing fields...
+  },
+  // ...existing config...
+});
+// ...existing code...
